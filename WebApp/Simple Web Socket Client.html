@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="content">
+	<fieldset>
+		<legend>Server Location</legend>
+		<div>
+			<label>URL:</label>
+			<input type="text" id="serverUrl" value="ws://192.168.137.119:81">
+			<button id="connectButton">Connect</button>
+			<button id="disconnectButton">Disconnect</button>
+		</div>
+		<div>
+			<label>Status:</label>
+			<span id="connectionStatus">CLOSED</span>
+		</div>
+	</fieldset>
+	<fieldset id="requestArea">
+		<legend>I2S Setting</legend>
+		<div>
+			<br>
+			<!--<textarea id="sendMessage" disabled="disabled"></textarea> -->
+			<label>Time (Sec)</label> 
+			<input type="number" id="recTime" value="5">
+			<label>Bit Per Sample (BPS)</label>
+			<select id="bps" style="width:200px; height: 22px;">
+			    <option value="16" selected="">16</option>
+			    <option value="24" disabled="">24</option>
+			</select>
+			<label> Sampling Rate (Hz)</label>
+			<select id="sampleRate" style="width:200px; height: 22px;">
+			    <option value="16000" selected="">16000</option>
+			    <option value="44100">44100</option>
+			    <option value="96000">96000</option>
+			</select>
+			<label> Channel </label>
+			<select id="channel" style="width:100px; height: 22px;">
+			    <option value="1" selected="">Mono</option>
+			    <option value="2">Stereo</option>
+			</select>
+			<label> I2S Poart</label>
+			<select id="i2sPort" style="width:100px; height: 22px;">
+			    <option value="0" selected="">I2S 0</option>
+			    <option value="1">I2S 1</option>
+			</select>			
+			<button id="sendButton" disabled="disabled" style="width:100px; height: 22px;">Start Rec</button>
+			<br><br>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Recording Progress</legend>
+		<label>DOWNLOAD : </label> <input type="text" id="fileName" value="Recording.wav"> <button id="download">Download</button><br><br>
+		<div id="myProgress">
+		  <div id="myBar"></div>
+		</div>
+	</fieldset>
+	
+	<fieldset id="messageArea">
+		<legend>Message Log <button id="clearMessage">Clear</button></legend>
+		<div id="messages">
+			<!-- <textarea id="messages" style="width: 99%;"></textarea> -->
+		</div>
+	</fieldset>
+</div>
+<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</body></html>
